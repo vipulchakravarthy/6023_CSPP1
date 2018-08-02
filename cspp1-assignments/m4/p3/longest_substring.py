@@ -1,11 +1,11 @@
 '''
-#Assume s is a string of lower case characters.Write a program
-#that prints the longest substring of s in which the letters occur in
-#alphabetical order.In the case of ties, print the first substring.
+Assume s is a string of lower case characters.Write a program
+that prints the longest substring of s in which the letters occur in
+alphabetical order.In the case of ties, print the first substring.
 '''
 def main():
-    ''' 
-         #the program is to print longest substring in the given string
+    '''
+        the program is to print longest substring in the given string
     '''
     imp_sentence = str(input())
     imp_sent = str.lower(imp_sentence)
