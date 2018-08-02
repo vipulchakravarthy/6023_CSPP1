@@ -10,13 +10,13 @@ def main():
     #Write a program that counts up the number of vowels contained in the string s.
     #Valid vowels are: 'a', 'e', 'i', 'o', and 'u'.
     '''
-    S_IN = str(input())
-    S_INPUT = S_IN.lower()
-    COUNT = 0
-    for CHAR in S_INPUT:
-        if CHAR  in ('a', 'e', 'i', 'o', 'u'):
-            COUNT += 1
-    print(COUNT)
+    s_in = str(input())
+    s_input = s_in.lower()
+    count_int = 0
+    for char in s_input:
+        if char  in ('a', 'e', 'i', 'o', 'u'):
+            count_int += 1
+    print(count_int)
     # the input string is in s
     # remove pass and start your code here
     pass
