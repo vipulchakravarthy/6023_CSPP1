@@ -13,6 +13,6 @@ def main():
   for ind in range(length_m-2):
     if m_sent[ind] == "b" and m_sent[ind+1] == "o" and m_sent[ind+2] == "b":
         count_var += 1
-print(count_var)
+  print(count_var)
 if __name__ == "__main__":
     main()
