@@ -19,7 +19,6 @@ def main():
     print(count_int)
     # the input string is in s
     # remove pass and start your code here
-    pass
 
 if __name__ == "__main__":
     main()
