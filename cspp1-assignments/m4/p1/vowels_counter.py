@@ -10,7 +10,7 @@ def main():
     #Write a program that counts up the number of vowels contained in the string s.
     #Valid vowels are: 'a', 'e', 'i', 'o', and 'u'.
     '''
-    s = raw_input()
+    s = input()
     # the input string is in s
     # remove pass and start your code here
     pass
