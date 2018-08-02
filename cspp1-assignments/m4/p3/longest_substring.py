@@ -10,7 +10,7 @@ def main():
     imp_sentence = str(input())
     imp_sent = str.lower(imp_sentence)
     maxim_substr = []
-    for i in range(len(imp_sent)):
+    for i,_ in enumerate(imp_sent):
         sub_string = imp_sent[i]
         count_var = 0
         while i + 1 < len(imp_sent) and imp_sent[i] <= imp_sent[i+1]:
