@@ -11,11 +11,11 @@ def main():
     high = number
     output = (low + high)/2.0
     while abs(output**2 - number) >= epsilon:
-        if output**2 < number :
+        if output**2 < number:
             low = output
         else:
             high = output
         output = (low + high)/2.0
     print(output)
-if __name__== "__main__":
+if __name__ == "__main__":
     main()
