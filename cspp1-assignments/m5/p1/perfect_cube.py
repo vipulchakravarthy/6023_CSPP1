@@ -2,10 +2,10 @@
 perfect cube or not using guess and check algorithm
 '''
 def main():
-	''' the problem is about to check whether the given
-	 number is perfect cube or not
-	 '''
-	cube_number = int(input())
+    ''' the problem is about to check whether the given
+     number is perfect cube or not
+     '''
+    cube_number = int(input())
     epsilon = 0.01
     step = 1
     guess = 0
@@ -15,8 +15,8 @@ def main():
         else:
             break
     if abs(guess**3 - cube_number) >= epsilon:
-        print(cube_number + 'not a perfect cube')
+        print(str(cube_number) + 'not a perfect cube')
     else:
-        print(cube_number + 'is  a perfect cube ')
-if __name__== "__main__":
-	main()
+        print(str(cube_number) + 'is  a perfect cube ')
+if __name__ == "__main__":
+    main()
