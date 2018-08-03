@@ -7,8 +7,7 @@ def main():
     ''' 
     epsilon = 0.01
     number = int(input())
-    epsilon = 0.01
-    low = 1.0
+    low = 0.0
     high = number
     output = (low + high)/2.0
     while abs(output**2 - number) >= epsilon:
