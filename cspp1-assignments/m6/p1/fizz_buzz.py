@@ -12,7 +12,7 @@ def main():
     '''
     number = int(input())
     for num_n in range(1, number+1):
-        if num_n%3== 0 and num_n%5 == 0:
+        if num_n%3 == 0 and num_n%5 == 0:
             print("Fizz")
             print("Buzz")
         elif num_n%3 == 0:
@@ -21,6 +21,5 @@ def main():
             print("Buzz")
         else:
             print(num_n)
-if __name__  == "__main__":
+if __name__ == "__main__":
     main()
-
