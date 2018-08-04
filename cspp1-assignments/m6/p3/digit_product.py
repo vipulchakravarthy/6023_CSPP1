@@ -8,13 +8,13 @@ def main():
     and print the product its digits.
     '''
     int_input = int(input())
+    product = 1
     if int_input == 0:
         product = 0
     while int_input != 0:
-            product = 1
-            digit = (int_input % 10)
-            product = (product * digit)
-            int_input = (int_input // 10)
+            digit = int_input % 10
+            product = product * digit
+            int_input = int_input // 10
     print(product)
 if __name__ == "__main__":
     main()
