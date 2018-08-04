@@ -12,7 +12,7 @@ def main():
     if int_input == 0:
         product = 0
     while int_input != 0:
-        digit = abs(int_input )% 10
+        digit = abs(int_input)% 10
         product = product * digit
         int_input = abs(int_input) // 10
     print(product)
