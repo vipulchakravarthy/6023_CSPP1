@@ -24,6 +24,8 @@ def paying_debtoffinayear(balance_p, annual_interestrate, monthly_paymentrate):
         month += 1
     return round(balance_p, 2)
 def main():
+    ''' we will ge the caculated balance after one year from the function module
+    '''
     data = input()
     data = data.split(' ')
     data = list(map(float, data))
