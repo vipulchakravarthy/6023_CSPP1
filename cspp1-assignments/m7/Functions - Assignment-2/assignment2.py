@@ -26,7 +26,7 @@ def paying_debtoffinayear(balance_p, annual_interestrate, set_min):
         balance_p = monthly_unpaid + (monthly_interest * monthly_unpaid)
         if monthly_unpaid <= 0 and month == 12:
             return minimum_fixed
-        elif month == 12 and  monthly_unpaid > 0:
+        if month == 12 and  monthly_unpaid > 0:
             month = 0
             minimum_fixed += 10
             balance_p = set_min
