@@ -10,7 +10,7 @@ At the end of 12 months, print out the remaining
 balance. Be sure to print out no more than two decimal digits of accuracy - so print
 '''
 def paying_debtoffinayear(balance_p, annual_interestrate, monthly_paymentrate):
-    ''' 
+    '''
     taking input as balance, annualinterest rate, monthly payment rate and
     and give the remaining balance after one year.
     '''
