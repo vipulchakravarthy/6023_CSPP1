@@ -10,16 +10,17 @@ At the end of 12 months, print out the remaining
 balance. Be sure to print out no more than two decimal digits of accuracy - so print
 '''
 def paying_debtoffinayear(balance_p, annual_interestrate, monthly_paymentrate):
-    ''' taking input as balance, annualinterest rate, monthly payment rate and
-      and give the remaining balance after one year.
-     '''
+    ''' 
+    taking input as balance, annualinterest rate, monthly payment rate and
+    and give the remaining balance after one year.
+    '''
     month = 0
     while month <= 11:
-       monthly_interestr = (annual_interestrate / 12.0)
-       min_monthlyp = (monthly_paymentrate * balance_p)
-       monthly_unpaid = balance_p - min_monthlyp
-       balance_p = monthly_unpaid + (monthly_interestr * monthly_unpaid)
-       month+=1
+        monthly_interestr = (annual_interestrate / 12.0)
+        min_monthlyp = (monthly_paymentrate * balance_p)
+        monthly_unpaid = balance_p - min_monthlyp
+        balance_p = monthly_unpaid + (monthly_interestr * monthly_unpaid)
+        month+=1
     return round(balance_p, 2)
 def main():
     data = input()
@@ -28,4 +29,3 @@ def main():
     print("Remaining balance:", (paying_debtoffinayear(data[0], data[1], data[2])))
 if __name__ == "__main__":
     main()
-
