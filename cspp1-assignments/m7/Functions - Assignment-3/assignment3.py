@@ -40,4 +40,3 @@ def main():
     print("Lowest Payment:", round(paying_debtoffinayear(data[0], data[1]), 2))
 if __name__ == "__main__":
     main()
-
