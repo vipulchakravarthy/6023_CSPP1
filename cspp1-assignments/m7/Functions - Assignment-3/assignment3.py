@@ -1,6 +1,6 @@
-''' 
+'''
 Functions - Assignment-3 program is to print the what is the lowest
-payment done using bisection method 
+payment done using bisection method
 '''
 def paying_debtoffinayear(balance_p, annual_interestr):
     ''' the input is taken as balance and annual interest. we calculate the output which
@@ -38,5 +38,6 @@ def main():
     data = data.split(' ')
     data = list(map(float, data))
     print("Lowest Payment:", round(paying_debtoffinayear(data[0], data[1]), 2))
-if __name__ == "__main__" :
+if __name__ == "__main__":
     main()
+
