@@ -14,6 +14,9 @@ off all debt in under 1 year
 def paying_debtoffinayear(balance_p, annual_interestrate,set_min):
     ''' calculating the minimum lowest payment to be done
     '''
+    if balance_p <= 0:
+        minimum_fixed = 0
+        return minimum_fixed
     minimum_fixed = 10
     month = 0
     monthly_interest = (annual_interestrate)/12.0
@@ -23,7 +26,7 @@ def paying_debtoffinayear(balance_p, annual_interestrate,set_min):
         balance_p = monthly_unpaid + (monthly_interest * monthly_unpaid)
         if monthly_unpaid <= 0 and month == 12:
             return (minimum_fixed)
-        elif month==12 and  monthly_unpaid > 0:
+        elif month == 12 and  monthly_unpaid > 0:
             month = 0
             minimum_fixed += 10
             balance_p=set_min
@@ -35,6 +38,6 @@ def main():
     data = input()
     data = data.split(' ')
     data = list(map(float, data))
-    print(paying_debtoffinayear(data[0],data[1],data[0]))
+    print("Lowest Payment:",paying_debtoffinayear(data[0],data[1],data[0]))
 if __name__ == "__main__":
     main()
