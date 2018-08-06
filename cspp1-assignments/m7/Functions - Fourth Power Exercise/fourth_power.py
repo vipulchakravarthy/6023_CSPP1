@@ -7,15 +7,15 @@
 # This function takes in one number and returns one number.
 def square(x):
     '''
-    x: int or float.
+    x: int or float. 
+    returns the square of x.
     '''
-    # Your code here
     return x*x
 def fourthPower(x):
     '''
     x: int or float.
+    returns the fourth power of x.
     '''
-    # Your code here
     return square(x) * square(x)
 def main():
     data = input()
