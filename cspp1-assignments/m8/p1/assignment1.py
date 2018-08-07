@@ -1,11 +1,9 @@
 '''
 Exercise: Assignment-1
-Write a Python function, factorial(n), that takes in one number
-and returns the factorial of given number.
+Write a Python function, factorial(n), that takes in one
+number and returns the factorial of given number.
 This function takes in one number and returns one number.
 '''
-import sys
-sys.setrecursionlimit(10000)
 def factorial(num_g):
     '''
     n is positive Integer
@@ -17,9 +15,9 @@ def factorial(num_g):
         return num_g * factorial(num_g -1)
 def main():
     ''' program is to find the factorial of given number
-    using recursion
     '''
     number = int(input())
     print(factorial(number))
 if __name__ == "__main__":
     main()
+
