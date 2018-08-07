@@ -1,9 +1,11 @@
+import sys
 '''
 Exercise: Assignment-1
 Write a Python function, factorial(n), that takes in one number
 and returns the factorial of given number.
 This function takes in one number and returns one number.
 '''
+sys.setrecursionlimit(10000)
 def factorial(num_g):
     '''
     n is positive Integer
