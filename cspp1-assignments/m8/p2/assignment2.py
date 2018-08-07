@@ -16,11 +16,10 @@ def sumofdigits(number_g):
         number_g = number_g // 10
     return sum_n
 def main():
-    ''' program is to calculate the sum of the digits of 
+    ''' program is to calculate the sum of the digits of
     a given number and print the sum using functions
     '''
     number_g = int(input())
-    print(sumofdigits(number_g)) 
+    print(sumofdigits(number_g))
 if __name__ == "__main__":
     main()
-
