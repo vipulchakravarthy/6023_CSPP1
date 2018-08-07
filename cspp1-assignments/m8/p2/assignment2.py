@@ -9,12 +9,9 @@ def sumofdigits(number_g):
     n is positive Integer returns: a positive integer
     the sum of digits of n.
     '''
-    sum_n = 0
-    while number_g > 0:
-        digit = number_g%10
-        sum_n = sum_n + digit
-        number_g = number_g // 10
-    return sum_n
+    if number_g <= 0:
+        return 0
+    return (number_g % 10) + sumofdigits(number_g // 10)
 def main():
     ''' program is to calculate the sum of the digits of
     a given number and print the sum using functions
