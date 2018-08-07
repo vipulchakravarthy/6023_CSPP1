@@ -11,8 +11,7 @@ def factorial(num_g):
     '''
     if num_g == 1 or num_g == 0:
         return 1
-    if num_g > 1:
-        return num_g * factorial(num_g -1)
+    return num_g * factorial(num_g -1)
 def main():
     ''' program is to find the factorial of given number
     '''
