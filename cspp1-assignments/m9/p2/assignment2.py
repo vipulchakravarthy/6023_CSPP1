@@ -22,7 +22,7 @@ def get_guessed_word(secret_word, letters_guessed):
 def main():
     '''
     program is to check whether given secret word matches with the
-    guessed letters or not. if it matches then it should print the 
+    guessed letters or not. if it matches then it should print the
     corresponding letter or it should print a _.
     '''
     user_input = input()
