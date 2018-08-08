@@ -18,6 +18,8 @@ def isitIn(char, aStr):
     m = temp[len(temp) // 2]
     if char == m:
         return True
+    if len(temp) == 1 and temp[0] != char :
+        return False
     elif len(temp) == 0:
         return False
     elif char < m:
