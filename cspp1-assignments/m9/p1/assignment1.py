@@ -8,7 +8,7 @@ secret_word are in letters_guessed) and False otherwise.
 def is_word_guessed(secret_word, letters_guessed):
     '''
     secret_word: string, the word the user is guessing
-    letters_guessed: list, what letters have been guessed so far 
+    letters_guessed: list, what letters have been guessed so far
     returns: boolean, True if all the letters of secret_word are in letters_guessed;
     False otherwise
     '''
@@ -18,7 +18,7 @@ def is_word_guessed(secret_word, letters_guessed):
     return True
 def main():
     '''
-    check whether the given secret word is there in  the 
+    check whether the given secret word is there in  the
     letters guessed or not . if it is there print true or else false.
     '''
     user_input = input()
