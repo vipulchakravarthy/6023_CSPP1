@@ -12,13 +12,13 @@ def get_guessed_word(secret_word, letters_guessed):
     returns: string, comprised of letters and underscores that represents
       what letters in secret_word have been guessed so far.
     '''
-    reuslt = []
+    result = []
     for char in secret_word:
         if char  in letters_guessed:
-            reuslt.append(char)
+            result.append(char)
         else:
-            reuslt.append('_')
-    return ''.join(reuslt)
+            result.append('_')
+    return ''.join(result)
 def main():
     '''
     program is to check whether given secret word matches with the
