@@ -12,6 +12,9 @@ def how_many(aDict):
     	number_values += len(i)
     return number_values
 def main():
+	''' the program is to print the total number of 
+	vaules in the total dictionary
+	'''
 	n=input()
 	aDict={}
 	for i in range(int(n)):
