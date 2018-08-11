@@ -143,7 +143,5 @@ def main():
     '''
     secretWord = chooseWord(wordlist).lower()
     hangman(secretWord)
-
-
 if __name__ == "__main__":
     main()

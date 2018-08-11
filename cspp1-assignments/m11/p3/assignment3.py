@@ -23,7 +23,6 @@ def isValidWord(word, hand, wordList):
     			return True
     		else:
     			return False
- 
 def main():
 	word = input()
 	n = int(input())

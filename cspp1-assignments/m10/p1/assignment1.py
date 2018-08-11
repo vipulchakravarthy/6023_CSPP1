@@ -1,3 +1,4 @@
+
 '''
 Exercise : Assignment-1
 implement the function get_available_letters that takes in one parameter -

@@ -1,6 +1,9 @@
-#Exercise: Assignment-2
-#Implement the updateHand function. Make sure this function has no side effects: i.e., it must not mutate the hand passed in. Before pasting your function definition here, be sure you've passed the appropriate tests in test_ps4a.py.
-import copy
+'''Exercise: Assignment-2
+Implement the updateHand function. Make sure this function
+has no side effects: i.e., it must not mutate the hand passed in.
+Before pasting your function definition here, be sure you've passed
+the appropriate tests in test_ps4a.py
+ '''
 def updateHand(hand, word):
     """
     Assumes that 'hand' has all the letters in word.
@@ -19,7 +22,7 @@ def updateHand(hand, word):
     """
     temp = hand.copy()
     for i in word: 
-        #if  i in temp:
+        if  i in temp:
             temp[i] -= 1         
     return temp
 def main():
@@ -31,8 +34,5 @@ def main():
 		adict[l[0]] = int(l[1])
 	data1 = input()
 	print(updateHand(adict,data1))
-		
-
-
 if __name__== "__main__":
 	main()
