@@ -1,7 +1,7 @@
 '''
     Assignment-1 Create Social Network
 '''
-def create_social_network(data,lines):
+def create_social_network(data, lines):
     '''
         The data argument passed to the function is a string
         It represents simple social network data
@@ -30,17 +30,15 @@ def create_social_network(data,lines):
         Return a empty dictionary if the string format of the data is invalid
         Empty dictionary is not None, it is a dictionary with no keys
     '''
-    my_dict={}
-    for line in data:
-        values = data.split()
+    my_dict = {}
+    values = data.split()
     j = 2
     if values[1] != 'follows':
         return my_dict 
-    else:
-        for iterate in range(0, lines):
-            my_dict[values[iterate*3]] = values[j].split('  , ')
-            j +=3
-        return my_dict
+    for iterate in range(0, lines):
+            my_dict[values[iterate*3]] = values[j].split(',')
+            j += 3
+    return my_dict
 def main():
     '''
         handling testcase input and printing output
@@ -54,7 +52,7 @@ def main():
         i += 1
         string += input()
         string += '\n'
-    print(create_social_network(string,lines))
+    print(create_social_network(string, lines))
 if __name__ == "__main__":
     main()
  
