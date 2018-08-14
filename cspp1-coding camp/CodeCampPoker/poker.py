@@ -31,12 +31,13 @@ def is_straight(hand):
             temp_list.append(int(element[0]))
     value = sorted(temp_list)
     for element in range(len(value)-1):
-        if value[element+1] - value[element] == 1 :
+        if value[element+1]-value[element] == 1:
             count += 1
     if count == len(value)-1:
-        return True
+        flag = True
     else:
-        return False
+        flag = False
+    return flag
 def is_flush(hand):
     '''
         How do we find out if the given hand is a flush?
@@ -52,9 +53,10 @@ def is_flush(hand):
         if element[1] == temp:
             count += 1
     if count == len(hand):
-        return True
+        flag = True
     else:
-        return False
+        flag = False
+    return flag
 
 def hand_rank(hand):
     '''
@@ -80,12 +82,12 @@ def hand_rank(hand):
     # third would be a straight with the return value 1
     # any other hand would be the fourth best with the return value 0
     # max in poker function uses these return values to select the best hand
+    if is_flush(hand) and is_straight(hand):
+        return 3
     if is_flush(hand):
         return 2
-    elif is_straight(hand):
+    if is_straight(hand):
         return 1
-    elif is_flush(hand) and is_straight(hand):
-        return 3
     return 0
 def poker(hands):
     '''
@@ -105,7 +107,7 @@ def poker(hands):
     # hand_rank is a function passed to max
     # hand_rank takes a hand and returns its rank
     # max uses the rank returned by hand_rank and returns the best hand
-    return max(hands, key = hand_rank)
+    return max(hands, key=hand_rank)
 if __name__ == "__main__":
     # read the number of test cases
     COUNT = int(input())
