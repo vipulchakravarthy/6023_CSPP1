@@ -21,9 +21,9 @@ def updateHand(hand, word):
     returns: dictionary (string -> int)
     """
     temp = hand.copy()
-    for i in word: 
-        if  i in temp:
-            temp[i] -= 1         
+    for letter in word: 
+        if  letter in temp:
+            temp[letter] -= 1         
     return temp
 def main():
 	n = input()
