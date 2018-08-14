@@ -33,10 +33,7 @@ def is_straight(hand):
     for element in range(len(value)-1):
         if value[element+1]-value[element] == 1:
             count += 1
-    if count == len(value)-1:
-        flag = True
-    else:
-        flag = False
+    flag = bool(count == len(value)-1)
     return flag
 def is_flush(hand):
     '''
@@ -52,10 +49,7 @@ def is_flush(hand):
     for element in hand:
         if element[1] == temp:
             count += 1
-    if count == len(hand):
-        flag = True
-    else:
-        flag = False
+    flag = bool(count == len(hand))
     return flag
 
 def hand_rank(hand):
