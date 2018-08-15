@@ -3,7 +3,72 @@
     Read about poker hands here.
     https://en.wikipedia.org/wiki/List_of_poker_hands
 '''
-
+def is_fullhouse(hand):
+    iterate = 0
+    c1 = 0
+    c2 = 0
+    while iterate <= (len(hand)-1):
+        temp = hand[iterate][0]
+        count = 0
+        for element in hand:
+            if element[0] == temp:
+                count += 1
+        if count == 3:
+            c1 = 1
+        elif count == 2:
+            c2= 1 
+        iterate+=1
+    if c1==1 and c2 == 1:
+        flag = True
+    else:
+        flag = False
+    return flag
+def is_twopair(hand):
+    iterate = 0
+    while iterate <= (len(hand)-1):
+        temp = hand[iterate][0]
+        count = 0
+        for element in hand:
+            if element[0] == temp:
+                count += 1
+        iterate+=1
+    if count == (len(hand)-1):
+        flag = True
+    else:
+        flag = False
+    return flag
+def is_onepair(hand):
+    iterate = 0
+    while iterate <= (len(hand)-1):
+        temp = hand[iterate][0]
+        count = 0
+        for element in hand:
+            if element[0] == temp:
+                count += 1
+        if count == (len(hand)-3):
+            return True
+        iterate+=1
+    return False
+def is_three_a_kind(hand):
+    iterate = 0
+    while iterate <= (len(hand)-1):
+        temp = hand[iterate][0]
+        count = 0
+        for element in hand:
+            if element[0] == temp:
+                count += 1
+        if count == (len(hand)-2):
+            return True
+        iterate+=1
+    return False
+def is_fourakind(hand):
+    count = 0
+    temp = hand[0][0]
+    for element in hand:
+        if element[0] == temp:
+            count += 1
+    flag = bool(count == (len(hand)-1))
+    return flag
 def is_straight(hand):
     '''
         How do we find out if the given hand is a straight?
@@ -76,6 +141,16 @@ def hand_rank(hand):
     # third would be a straight with the return value 1
     # any other hand would be the fourth best with the return value 0
     # max in poker function uses these return values to select the best hand
+    if is_fullhouse(hand):
+        return 8
+    if is_twopair(hand):
+        return 7
+    if is_onepair(hand):
+        return 6
+    if is_three_a_kind(hand):
+        return 5
+    if is_fourakind(hand):
+        return 4
     if is_flush(hand) and is_straight(hand):
         return 3
     if is_flush(hand):
