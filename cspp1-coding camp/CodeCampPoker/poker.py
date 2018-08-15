@@ -4,9 +4,11 @@
     https://en.wikipedia.org/wiki/List_of_poker_hands
 '''
 def is_fullhouse(hand):
+    ''' calculate whether the given hand is full house or not
+    '''
     iterate = 0
-    c1 = 0
-    c2 = 0
+    pair_1 = 0
+    pair_2 = 0
     while iterate <= (len(hand)-1):
         temp = hand[iterate][0]
         count = 0
@@ -14,16 +16,18 @@ def is_fullhouse(hand):
             if element[0] == temp:
                 count += 1
         if count == 3:
-            c1 = 1
+            pair_1 = 1
         elif count == 2:
-            c2= 1 
-        iterate+=1
-    if c1==1 and c2 == 1:
+            pair_2 = 1 
+        iterate += 1
+    if pair_1 == 1 and pair_2 == 1:
         flag = True
     else:
         flag = False
     return flag
 def is_twopair(hand):
+    ''' calculate whether the given hand is two pair or not
+    '''
     iterate = 0
     while iterate <= (len(hand)-1):
         temp = hand[iterate][0]
@@ -31,13 +35,15 @@ def is_twopair(hand):
         for element in hand:
             if element[0] == temp:
                 count += 1
-        iterate+=1
+        iterate += 1
     if count == (len(hand)-1):
         flag = True
     else:
         flag = False
     return flag
 def is_onepair(hand):
+    ''' check whether the given hand is one pair or not
+    '''
     iterate = 0
     while iterate <= (len(hand)-1):
         temp = hand[iterate][0]
@@ -47,9 +53,11 @@ def is_onepair(hand):
                 count += 1
         if count == (len(hand)-3):
             return True
-        iterate+=1
+        iterate += 1
     return False
 def is_three_a_kind(hand):
+    ''' check whether the given hand is three a kind or not
+    '''
     iterate = 0
     while iterate <= (len(hand)-1):
         temp = hand[iterate][0]
@@ -59,9 +67,11 @@ def is_three_a_kind(hand):
                 count += 1
         if count == (len(hand)-2):
             return True
-        iterate+=1
+        iterate += 1
     return False
 def is_fourakind(hand):
+    ''' check whether given hand is four a kind or not
+    '''
     count = 0
     temp = hand[0][0]
     for element in hand:
