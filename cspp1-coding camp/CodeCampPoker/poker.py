@@ -18,12 +18,9 @@ def is_fullhouse(hand):
         if count == 3:
             pair_1 = 1
         elif count == 2:
-            pair_2 = 1 
+            pair_2 = 1
         iterate += 1
-    if pair_1 == 1 and pair_2 == 1:
-        flag = True
-    else:
-        flag = False
+    flag = bool(pair_1 == 1 and pair_2 == 1)
     return flag
 def is_twopair(hand):
     ''' calculate whether the given hand is two pair or not
@@ -36,10 +33,7 @@ def is_twopair(hand):
             if element[0] == temp:
                 count += 1
         iterate += 1
-    if count == (len(hand)-1):
-        flag = True
-    else:
-        flag = False
+    flag = bool(count == (len(hand)-1))
     return flag
 def is_onepair(hand):
     ''' check whether the given hand is one pair or not
