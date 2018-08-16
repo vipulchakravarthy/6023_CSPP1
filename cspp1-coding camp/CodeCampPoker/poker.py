@@ -3,6 +3,53 @@
     Read about poker hands here.
     https://en.wikipedia.org/wiki/List_of_poker_hands
 '''
+def values(hand):
+    count = 0
+    temp_list = []
+    for element in hand:
+        if element[0] == 'A':
+            temp_list.append(14)
+        elif element[0] == 'K':
+            temp_list.append(13)
+        elif element[0] == 'Q':
+            temp_list.append(12)
+        elif element[0] == 'J':
+            temp_list.append(11)
+        elif element[0] == 'T':
+            temp_list.append(10)
+        else:
+            temp_list.append(int(element[0]))
+    value = sorted(temp_list)
+    return value
+def highcard(hand):
+    temp_list = []
+    for element in hand:
+        if element[0] == 'A':
+            temp_list.append(float(1.4))
+        elif element[0] == 'K':
+            temp_list.append(float(1.3))
+        elif element[0] == 'Q':
+            temp_list.append(float(1.2))
+        elif element[0] == 'J':
+            temp_list.append(float(1.1))
+        elif element[0] == 'T':
+            temp_list.append(float(1.0))
+        else:
+            temp_list.append(float(element[0])/10)
+    return max(temp_list)
+def two_onepair(hand):
+    face_value = []
+    iterate = 0
+    while iterate <= (len(hand)-1):
+        temp = hand[iterate][0]
+        count = 0
+        for element in hand:
+            if element[0] == temp:
+                count += 1
+            if count == 2:
+                face_value = element[0] 
+    return face_value          
+
 def is_fullhouse(hand):
     ''' calculate whether the given hand is full house or not
     '''
@@ -146,22 +193,22 @@ def hand_rank(hand):
     # any other hand would be the fourth best with the return value 0
     # max in poker function uses these return values to select the best hand
     if is_fullhouse(hand):
-        return 6
+        return 7
     if is_twopair(hand):
-        return 2
-    if is_onepair(hand):
-        return 1
-    if is_three_a_kind(hand):
         return 3
+    if is_onepair(hand):
+        return 2
+    if is_three_a_kind(hand):
+        return 4
     if is_fourakind(hand):
-        return 4
-    if is_flush(hand) and is_straight(hand):
         return 8
+    if is_flush(hand) and is_straight(hand):
+        return 9
     if is_flush(hand):
-        return 5
+        return 6
     if is_straight(hand):
-        return 4
-    return 0
+        return 5
+    return highcard(hand)
 def poker(hands):
     '''
         This function is completed for you. Read it to learn the code.
