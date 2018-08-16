@@ -164,7 +164,7 @@ def hand_rank(hand):
     # max in poker function uses these return values to select the best hand
     hand_face_values = face_values(hand)
     if is_flush(hand) and is_straight(hand):
-        return 8
+        return (8, hand_face_values)
     if is_kind_off(hand_face_values, 4):
         return (7, is_kind_off(hand_face_values, 4), hand_face_values)
     if is_kind_off(hand_face_values, 3) and is_kind_off(hand_face_values, 2):
