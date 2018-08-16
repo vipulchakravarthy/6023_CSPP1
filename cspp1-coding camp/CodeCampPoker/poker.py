@@ -168,7 +168,7 @@ def hand_rank(hand):
     if is_twopair(hand):
         return 3
     if is_kind_off(hand_face_values, 2):
-        return(1, is_kind_off(hand_face_values, 2), hand_face_values)
+        return (2, is_kind_off(hand_face_values, 2), hand_face_values)
     if is_three_a_kind(hand):
         return 4
     if is_fourakind(hand):
