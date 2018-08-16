@@ -3,52 +3,22 @@
     Read about poker hands here.
     https://en.wikipedia.org/wiki/List_of_poker_hands
 '''
-def values(hand):
-    count = 0
-    temp_list = []
-    for element in hand:
-        if element[0] == 'A':
-            temp_list.append(14)
-        elif element[0] == 'K':
-            temp_list.append(13)
-        elif element[0] == 'Q':
-            temp_list.append(12)
-        elif element[0] == 'J':
-            temp_list.append(11)
-        elif element[0] == 'T':
-            temp_list.append(10)
-        else:
-            temp_list.append(int(element[0]))
-    value = sorted(temp_list)
-    return value
-def highcard(hand):
-    temp_list = []
-    for element in hand:
-        if element[0] == 'A':
-            temp_list.append(float(1.4))
-        elif element[0] == 'K':
-            temp_list.append(float(1.3))
-        elif element[0] == 'Q':
-            temp_list.append(float(1.2))
-        elif element[0] == 'J':
-            temp_list.append(float(1.1))
-        elif element[0] == 'T':
-            temp_list.append(float(1.0))
-        else:
-            temp_list.append(float(element[0])/10)
-    return max(temp_list)
-def two_onepair(hand):
-    face_value = []
-    iterate = 0
-    while iterate <= (len(hand)-1):
-        temp = hand[iterate][0]
-        count = 0
-        for element in hand:
-            if element[0] == temp:
-                count += 1
-            if count == 2:
-                face_value = element[0] 
-    return face_value          
+def face_values(hand):
+    """
+    returns only face values of a hand in a sorted desc order
+    """
+    hand_face_values = sorted(['--23456789TJQKA'.index(face) for face, suite in hand], reverse=True)
+    if hand_face_values == [14, 5, 4, 3, 2]:
+        hand_face_values = [5, 4, 3, 2, 1]
+    return hand_face_values
+
+def is_kind_off(f_values, number):
+    """
+    determines which kind the hand is
+    """
+    for face in f_values:
+        if f_values.count(face) == number:
+            return face     
 
 def is_fullhouse(hand):
     ''' calculate whether the given hand is full house or not
@@ -192,12 +162,13 @@ def hand_rank(hand):
     # third would be a straight with the return value 1
     # any other hand would be the fourth best with the return value 0
     # max in poker function uses these return values to select the best hand
+    hand_face_values = face_values(hand)
     if is_fullhouse(hand):
         return 7
     if is_twopair(hand):
         return 3
-    if is_onepair(hand):
-        return 2
+    if is_kind_off(hand_face_values, 2):
+        return(1, is_kind_off(hand_face_values, 2), hand_face_values)
     if is_three_a_kind(hand):
         return 4
     if is_fourakind(hand):
@@ -208,7 +179,7 @@ def hand_rank(hand):
         return 6
     if is_straight(hand):
         return 5
-    return highcard(hand)
+    return (0, hand_face_values)
 def poker(hands):
     '''
         This function is completed for you. Read it to learn the code.
