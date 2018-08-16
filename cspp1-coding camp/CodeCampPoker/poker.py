@@ -76,17 +76,25 @@ def is_twopair(hand):
 def is_onepair(hand):
     ''' check whether the given hand is one pair or not
     '''
-    iterate = 0
-    while iterate <= (len(hand)-1):
-        temp = hand[iterate][0]
-        count = 0
-        for element in hand:
-            if element[0] == temp:
-                count += 1
-        if count == (len(hand)-3):
-            return True
-        iterate += 1
-    return False
+    # iterate = 0
+    # while iterate <= (len(hand)-1):
+    #     temp = hand[iterate][0]
+    #     count = 0
+    #     for element in hand:
+    #         if element[0] == temp:
+    #             count += 1
+    #     if count == (len(hand)-3):
+    #         return True
+    #     iterate += 1
+    # return False
+    new = []
+    value_list = sorted(values(hand))
+    for i in value_list:
+        if value_list.count(i) == 2:
+            new.append(i)
+    if len(new) == 0:
+        return False
+    return (max(new)/100)+1
 def is_three_a_kind(hand):
     ''' check whether the given hand is three a kind or not
     '''
@@ -183,22 +191,22 @@ def hand_rank(hand):
     # third would be a straight with the return value 1
     # any other hand would be the fourth best with the return value 0
     # max in poker function uses these return values to select the best hand
-    if is_fullhouse(hand):
-        return 7
-    if is_twopair(hand):
-        return 3
-    if is_onepair(hand):
-        return 2
-    if is_three_a_kind(hand):
-        return 4
-    if is_fourakind(hand):
-        return 8
     if is_flush(hand) and is_straight(hand):
         return 9
+    if is_fourakind(hand):
+        return 8
+    if is_fullhouse(hand):
+        return 7
     if is_flush(hand):
         return 6
     if is_straight(hand):
         return 5
+    if is_three_a_kind(hand):
+        return 4
+    if is_twopair(hand):
+        return 3
+    if is_onepair(hand):
+        return is_onepair(hand)
     return highcard(hand)
 def poker(hands):
     '''
