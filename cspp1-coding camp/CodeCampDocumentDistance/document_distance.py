@@ -2,7 +2,7 @@
     Document Distance - A detailed description is given in the PDF
 '''
 import math
-file_name = "stopwords.txt"
+FILE_NAME = "stopwords.txt"
 
 def similarity(dict1, dict2):
     '''
@@ -38,18 +38,17 @@ def similarity(dict1, dict2):
         sum_d1 = sum_d1 + (word_freq[key][0]**2)
         sum_d2 = sum_d2 + (word_freq[key][1]**2)
     denominator = (math.sqrt(sum_d1) * math.sqrt(sum_d2))
-    similarity = numerator/ denominator
-    return round(similarity, 1)
-def load_stopwords(file_name):
+    document_distance = numerator/ denominator
+    return round(document_distance, 1)
+def load_stopwords(FILE_NAME):
     '''
         loads stop words from a file and returns a dictionary
     '''
     stopwords = {}
-    with open(file_name, 'r') as file_name:
-        for line in file_name:
+    with open(FILE_NAME, 'r') as FILE_NAME:
+        for line in FILE_NAME:
             stopwords[line.strip()] = 0
     return stopwords
-
 def main():
     '''
         take two inputs and call the similarity function
@@ -62,7 +61,7 @@ def main():
         input2 = input2.replace(char, '')
     input_list1 = input1.split()
     input_list2 = input2.split()
-    stop_words = load_stopwords(file_name)
+    stop_words = load_stopwords(FILE_NAME)
     for word in input_list1:
         if word in stop_words.keys():
             input_list1.remove(word)
