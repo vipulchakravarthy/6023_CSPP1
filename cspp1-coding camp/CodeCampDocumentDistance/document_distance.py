@@ -55,7 +55,7 @@ def main():
     '''
     input1 = input().lower()
     input2 = input().lower()
-    character = ".,!?$%^&*'()1234567890"
+    character = ".,!?$%^&*'-()1234567890"
     for char in character:
         input1 = input1.replace(char, '')
         input2 = input2.replace(char, '')
@@ -74,6 +74,8 @@ def main():
         input_list1.remove('')
     if '' in input_list2:
         input_list2.remove('')
+    print(input_list1)
+    print(input_list2)
     print(similarity(input_list1, input_list2))
 if __name__ == '__main__':
     main()
