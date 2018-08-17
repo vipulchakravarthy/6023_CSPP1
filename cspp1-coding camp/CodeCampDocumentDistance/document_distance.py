@@ -53,19 +53,21 @@ def main():
     '''
         take two inputs and call the similarity function
     '''
-    input1 = str.lower(input())
-    input2 = str.lower(input())
+    input1 = lower(input())
+    input2 = lower(input())
     character = '.,!?$%^&*()1234567890'
     for char in character:
         input1 = input1.replace(char, '')
         input2 = input2.replace(char, '')
     input_list1 = input1.split()
     input_list2 = input2.split()
+    temp_list1 = list(input_list1)
+    temp_list2 = list(input_list2)
     stop_words = load_stopwords(FILENAME)
-    for word in input_list1:
+    for word in temp_list1:
         if word in stop_words.keys():
             input_list1.remove(word)
-    for word in input_list2:
+    for word in temp_list2:
         if word in stop_words.keys():
             input_list2.remove(word)
     if '' in input_list1:
