@@ -53,8 +53,8 @@ def main():
     '''
         take two inputs and call the similarity function
     '''
-    input1 = lower(input())
-    input2 = lower(input())
+    input1 = input().lower()
+    input2 = input().lower()
     character = '.,!?$%^&*()1234567890'
     for char in character:
         input1 = input1.replace(char, '')
