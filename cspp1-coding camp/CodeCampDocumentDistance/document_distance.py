@@ -68,8 +68,8 @@ def main():
     for word in input_list2:
         if word in stop_words.keys():
             input_list2.remove(word)
-    input_list1.remove('') if '' in input_list1
-    input_list2.remove('') if '' in input_list2
+    if '' in input_list1: input_list1.remove('') 
+    if '' in input_list2: input_list2.remove('') 
     print(similarity(input_list1, input_list2))
 if __name__ == '__main__':
     main()
