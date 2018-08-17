@@ -40,12 +40,12 @@ def similarity(dict1, dict2):
     denominator = (math.sqrt(sum_d1) * math.sqrt(sum_d2))
     document_distance = numerator/ denominator
     return document_distance
-def load_stopwords(file_name):
+def load_stopwords(file):
     '''
         loads stop words from a file and returns a dictionary
     '''
     stopwords = {}
-    with open(file_name, 'r') as file_name:
+    with open(file, 'r') as file_name:
         for line in file_name:
             stopwords[line.strip()] = 0
     return stopwords
