@@ -74,8 +74,8 @@ def main():
         input_list1.remove('')
     if '' in input_list2:
         input_list2.remove('')
-    print(input_list1)
-    print(input_list2)
+    # print(input_list1)
+    # print(input_list2)
     print(similarity(input_list1, input_list2))
 if __name__ == '__main__':
     main()
