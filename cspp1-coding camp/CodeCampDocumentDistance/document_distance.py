@@ -39,7 +39,7 @@ def similarity(dict1, dict2):
         sum_d2 = sum_d2 + (word_freq[key][1]**2)
     denominator = (math.sqrt(sum_d1) * math.sqrt(sum_d2))
     document_distance = numerator/ denominator
-    return round(document_distance, 1)
+    return document_distance
 def load_stopwords(file_name):
     '''
         loads stop words from a file and returns a dictionary
