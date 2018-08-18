@@ -33,7 +33,7 @@ def word_frequency(words_list):
             temp[word] = 1
     return temp
 def delete_keys(dict1, dict2):
-    ''' to delete the stopwords from the 
+    ''' to delete the stopwords from the
     given document
     '''
     for key in dict1:
