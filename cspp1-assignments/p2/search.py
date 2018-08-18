@@ -56,7 +56,6 @@ def process_queries(search_index, queries):
     for line in queries:
         words = line.split()
         search(search_index, words)
-    pass
 
 def main():
     '''
@@ -64,18 +63,14 @@ def main():
     '''
     # This line loads the search index
     search_index = eval(input())
-
     # read the number of search queries
     lines = int(input())
-    
     # read the search queries into a list
     queries = []
     for i in range(lines):
         queries.append(input())
         i += 1
-
     # call process queries
     process_queries(search_index, queries)
-
 if __name__ == '__main__':
     main()
