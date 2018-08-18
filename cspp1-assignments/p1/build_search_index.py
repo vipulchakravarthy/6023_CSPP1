@@ -22,7 +22,10 @@
 '''
 FILENAME = "stopwords.txt"
 def word_frequency(words_list):
-    temp ={}
+    ''' the word frequency function is to calculate the
+    frequency of words
+    '''
+    temp = {}
     for word in words_list:
         if word in temp:
             temp[word] += 1
@@ -30,6 +33,9 @@ def word_frequency(words_list):
             temp[word] = 1
     return temp
 def delete_keys(dict1, dict2):
+    ''' to delete the stopwords from the 
+    given document
+    '''
     for key in dict1:
         if key in dict2:
             del dict1[key]
@@ -53,7 +59,7 @@ def word_list(text):
     '''
     character = "~!@#$%^7*()-+'?,.;:123456789&0"
     for char in character:
-       text =  text.replace(char, '')
+        text = text.replace(char, '')
     word_lis = text.split()
     return word_lis
 
@@ -80,13 +86,13 @@ def build_search_index(docs):
                 words_list.remove(word)
         temp = word_frequency(words_list)
         for word in words_list:
-            if word not in search_index: 
+            if word not in search_index:
                 search_index[word] = [(i, temp[word])]
             else:
                 search_index[word].append((i, temp[word]))
         i += 1
         # add or update the words of the doc to the search index
-    for key in search_index.keys():
+    for key in search_index:
         search_index[key] = list(sorted(set(search_index[key])))
     final_dict = delete_keys(search_index, load_stopwords(FILENAME))
     return final_dict
