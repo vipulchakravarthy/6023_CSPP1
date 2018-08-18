@@ -41,7 +41,6 @@ def search(search_index, query):
     for word in query:
         if word in search_index:
             for value in search_index[word]:
-                val = value
                 i = 0
                 while i < len(search_index[word]):
                     temp.append(search_index[word][i][0])
