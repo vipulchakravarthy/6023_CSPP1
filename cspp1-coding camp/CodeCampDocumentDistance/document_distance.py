@@ -61,8 +61,8 @@ def main():
         input2 = input2.replace(char, '')
     input_list1 = input1.split()
     input_list2 = input2.split()
-    temp_list1 = list(input_list1)
-    temp_list2 = list(input_list2)
+    temp_list1 = input_list1[:]
+    temp_list2 = input_list2[:]
     stop_words = load_stopwords(FILENAME)
     for word in temp_list1:
         if word in stop_words.keys():
