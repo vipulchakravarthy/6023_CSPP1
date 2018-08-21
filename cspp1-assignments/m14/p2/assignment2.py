@@ -41,7 +41,7 @@ def load_words(file_name):
 
 WORDLIST_FILENAME = 'words.txt'
 
-class Message(object):
+class Message:
     ''' Grader's Implementation of Message Object '''
 
     ### DO NOT MODIFY THIS METHOD ###
@@ -108,12 +108,10 @@ class Message(object):
         Applies the Caesar Cipher to self.message_text with the input shift.
         Creates a new string that is self.message_text shifted down the
         alphabet by some number of characters determined by the input shift
-
         shift (integer): the shift with which to encrypt the message.
         0 <= shift < 26
-
         Returns: the message text (string) in which every character is shifted
-             down the alphabet by the input shift
+        down the alphabet by the input shift
         '''
         new_msg = []
         for i in self.message_text:
@@ -123,7 +121,7 @@ class Message(object):
             else:
                 new_msg.append(self.build_shift_dict(shift)[i])
         return ''.join(new_msg)
-### Helper code End
+
 class PlaintextMessage(Message):
     def __init__(self, text, shift):
         '''
@@ -164,14 +162,13 @@ class PlaintextMessage(Message):
     def get_message_text_encrypted(self):
         '''
         Used to safely access self.message_text_encrypted outside of the class
-        
         Returns: self.message_text_encrypted
         '''
         return self.message_text_encrypted
     def change_shift(self, shift):
         '''
         Changes self.shift of the PlaintextMessage and updates other 
-        attributes determined by shift (ie. self.encrypting_dict and 
+        attributes determined by shift (ie. self.encrypting_dict and
         message_text_encrypted).
         shift (integer): the new shift that should be associated with this message.
         0 <= shift < 26
