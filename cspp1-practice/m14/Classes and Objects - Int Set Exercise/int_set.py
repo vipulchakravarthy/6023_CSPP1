@@ -35,7 +35,7 @@ class intSet(object):
     def intersect(self, other):
         setC = intSet()
         for e in self.vals:
-            if other.x(e):
+            if other.member(e):
                 setC.insert(e)
         return setC
     def __len__(self):
@@ -65,6 +65,6 @@ def main():
         setB.insert(int(j))
     print(setA, setB)
     print(setA.intersect(setB))
-    print(setB.length())
+    print(setB.__len__())
 if __name__== "__main__":
     main()
