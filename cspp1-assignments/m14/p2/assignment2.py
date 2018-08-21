@@ -123,7 +123,7 @@ class Message:
         return ''.join(new_msg)
 
 class PlaintextMessage(Message):
-    ''' 
+    '''
     the class plain textmessage is to give the complete updated dictionary and
     changes made in shift also
     '''
