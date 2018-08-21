@@ -70,6 +70,7 @@ class Message(object):
         self.message_text (string, determined by input text)
         self.valid_words (list, determined using helper function load_words
         '''
+        self.cipher_dict = {}
         self.message_text = text
         self.valid_words = load_words(WORDLIST_FILENAME)
 
@@ -96,12 +97,11 @@ class Message(object):
         letters only.
         shift (integer): the amount by which to shift every letter of the
         alphabet. 0 <= shift < 26
-        Returns: a dictionary mapping a letter (string) to 
+        Returns: a dictionary mapping a letter (string) to
         another letter (string).
         '''
         cap = lambda char, shift: chr((ord(char)-65 + shift)%26 +65)
         small = lambda char, shift: chr((ord(char)-97 + shift)%26 +97)
-        self.cipher_dict = {}
         for i in string.ascii_lowercase:
             self.cipher_dict[i] = i
         for i in string.ascii_uppercase:
