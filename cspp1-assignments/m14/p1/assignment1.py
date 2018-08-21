@@ -38,7 +38,7 @@
 # Fill in the apply_shift(self, shift) method of the Message class.
 # You may find it easier to use build_shift_dict(self, shift).
 # Remember that spaces and punctuation should not be changed by the cipher.
-import string 
+import string
 # Helper code
 def load_words(file_name):
     '''
@@ -50,7 +50,6 @@ def load_words(file_name):
     Depending on the size of the word list, this function may
     take a while to finish.
     '''
-
     # inFile: file
     in_file = open(file_name, 'r')
     # line: string
@@ -59,21 +58,17 @@ def load_words(file_name):
     word_list = line.split()
     in_file.close()
     return word_list
-
 WORDLIST_FILENAME = 'words.txt'
 # Helper code End
-
 class Message(object):
     ### DO NOT MODIFY THIS METHOD ###
     def __init__(self, text):
         '''
         Initializes a Message object
-                
         text (string): the message's text
-
         a Message object has two attributes:
-            self.message_text (string, determined by input text)
-            self.valid_words (list, determined using helper function load_words
+        self.message_text (string, determined by input text)
+        self.valid_words (list, determined using helper function load_words
         '''
         self.message_text = text
         self.valid_words = load_words(WORDLIST_FILENAME)
@@ -86,7 +81,6 @@ class Message(object):
         Returns: self.message_text
         '''
         return self.message_text
-
     ### DO NOT MODIFY THIS METHOD ###
     def get_valid_words(self):
         '''
@@ -110,8 +104,8 @@ class Message(object):
         Returns: a dictionary mapping a letter (string) to 
                  another letter (string). 
         '''
-        cap = lambda char, shift : chr((ord(char)-65 + shift)%26 +65)
-        small = lambda char, shift : chr((ord(char)-97 + shift)%26 +97)
+        cap = lambda char, shift: chr((ord(char)-65 + shift)%26 +65)
+        small = lambda char, shift: chr((ord(char)-97 + shift)%26 +97)
         self.cipher_dict = {}
         for i in string.ascii_lowercase:
             self.cipher_dict[i] = i
@@ -119,7 +113,7 @@ class Message(object):
             self.cipher_dict[i] = i
         for i in self.cipher_dict:
             if i.islower():
-                self.cipher_dict[i] = small(i,shift)
+                self.cipher_dict[i] = small(i, shift)
             elif i.isupper():
                 self.cipher_dict[i] = cap(i, shift)
         return self.cipher_dict
@@ -143,7 +137,6 @@ class Message(object):
             else:
                 new_text.append(letter)
         return ''.join(new_text)
-
 def main():
     '''
         Function to handle testcases
@@ -151,6 +144,5 @@ def main():
     data = Message(input())
     data.get_message_text()
     print(data.apply_shift(int(input())))
-
 if __name__ == "__main__":
     main()
