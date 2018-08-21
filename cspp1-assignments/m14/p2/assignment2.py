@@ -127,7 +127,7 @@ class Message(object):
 class PlaintextMessage(Message):
     def __init__(self, text, shift):
         '''
-        Initializes a PlaintextMessage object 
+        Initializes a PlaintextMessage object
         text (string): the message's text
         shift (integer): the shift associated with this message
         A PlaintextMessage object inherits from Message and has five attributes:
@@ -137,7 +137,7 @@ class PlaintextMessage(Message):
             self.encrypting_dict (dictionary, built using shift)
             self.message_text_encrypted (string, created using shift)
 
-        Hint: consider using the parent class constructor so less 
+        Hint: consider using the parent class constructor so less
         code is repeated
         '''
         self.message_text = text
@@ -157,30 +157,24 @@ class PlaintextMessage(Message):
     def get_encrypting_dict(self):
         '''
         Used to safely access a copy self.encrypting_dict outside of the class
-        
         Returns: a COPY of self.encrypting_dict
         '''
-        copy_dict =  deepcopy(self.encrypting_dict)
+        copy_dict = deepcopy(self.encrypting_dict)
         return copy_dict
-
     def get_message_text_encrypted(self):
         '''
         Used to safely access self.message_text_encrypted outside of the class
         
         Returns: self.message_text_encrypted
         '''
-        
         return self.message_text_encrypted
-
     def change_shift(self, shift):
         '''
         Changes self.shift of the PlaintextMessage and updates other 
         attributes determined by shift (ie. self.encrypting_dict and 
         message_text_encrypted).
-        
         shift (integer): the new shift that should be associated with this message.
         0 <= shift < 26
-
         Returns: nothing
         '''
         self.shift = shift
@@ -198,6 +192,5 @@ def main():
     print(data.get_shift())
     print(data.get_encrypting_dict())
     print(data.get_message_text_encrypted())
-
 if __name__ == "__main__":
     main()
