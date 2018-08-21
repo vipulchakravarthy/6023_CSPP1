@@ -123,6 +123,10 @@ class Message:
         return ''.join(new_msg)
 
 class PlaintextMessage(Message):
+    ''' 
+    the class plain textmessage is to give the complete updated dictionary and
+    changes made in shift also
+    '''
     def __init__(self, text, shift):
         '''
         Initializes a PlaintextMessage object
@@ -167,7 +171,7 @@ class PlaintextMessage(Message):
         return self.message_text_encrypted
     def change_shift(self, shift):
         '''
-        Changes self.shift of the PlaintextMessage and updates other 
+        Changes self.shift of the PlaintextMessage and updates other
         attributes determined by shift (ie. self.encrypting_dict and
         message_text_encrypted).
         shift (integer): the new shift that should be associated with this message.
