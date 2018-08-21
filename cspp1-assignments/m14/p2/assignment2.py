@@ -17,6 +17,7 @@
 ### Helper code
 
 import string
+from copy import deepcopy
 
 def load_words(file_name):
     '''
@@ -93,7 +94,6 @@ class Message(object):
         lower_keys = list(string.ascii_lowercase)
         lower_values = list(string.ascii_lowercase)
         shift_lower_values = lower_values[shift:] + lower_values[:shift]
-
         upper_keys = list(string.ascii_uppercase)
         upper_values = list(string.ascii_uppercase)
         upper_shift_values = upper_values[shift:] + upper_values[:shift]
@@ -123,9 +123,7 @@ class Message(object):
             else:
                 new_msg.append(self.build_shift_dict(shift)[i])
         return ''.join(new_msg)
-
 ### Helper code End
-
 class PlaintextMessage(Message):
     def __init__(self, text, shift):
         '''
@@ -145,13 +143,13 @@ class PlaintextMessage(Message):
         self.message_text = text
         self.valid_words = load_words("words.txt")
         self.shift = shift
-        self.encrypting_dict = Message.build_shift_dict(self.message_text, self.shift)
-        self.message_text_encrypted = Message.apply_shift(text, shift)
+        Message.__init__(self, text)
+        self.encrypting_dict = self.build_shift_dict(self.shift)
+        self.message_text_encrypted = self.apply_shift(self.shift)
 
     def get_shift(self):
         '''
         Used to safely access self.shift outside of the class
-        
         Returns: self.shift
         '''
         return self.shift
@@ -162,7 +160,7 @@ class PlaintextMessage(Message):
         
         Returns: a COPY of self.encrypting_dict
         '''
-        copy_dict = deepcopy(self.encrypting_dict)
+        copy_dict =  deepcopy(self.encrypting_dict)
         return copy_dict
 
     def get_message_text_encrypted(self):
@@ -171,6 +169,7 @@ class PlaintextMessage(Message):
         
         Returns: self.message_text_encrypted
         '''
+        
         return self.message_text_encrypted
 
     def change_shift(self, shift):
@@ -185,7 +184,8 @@ class PlaintextMessage(Message):
         Returns: nothing
         '''
         self.shift = shift
-        return self.shift
+        self.encrypting_dict = self.build_shift_dict(self.shift)
+        self.message_text_encrypted = self.apply_shift(self.shift)
 
 def main():
     ''' Function to handle testcases '''
