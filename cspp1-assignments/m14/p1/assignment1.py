@@ -60,7 +60,10 @@ def load_words(file_name):
     return word_list
 WORDLIST_FILENAME = 'words.txt'
 # Helper code End
-class Message(object):
+class Message:
+    '''
+    message class fot implementing cipher text
+    '''
     ### DO NOT MODIFY THIS METHOD ###
     def __init__(self, text):
         '''
