@@ -232,7 +232,7 @@ class CiphertextMessage(Message):
         Message.__init__(self, text)
         self.valid_words = load_words("words.txt")[:]
         self.max_count = 0
-        self.decrypted_message =()
+        self.decrypted_message = ()
 
     def decrypt_message(self):
         '''
