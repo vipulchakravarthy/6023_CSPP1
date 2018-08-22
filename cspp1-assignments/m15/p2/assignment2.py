@@ -167,7 +167,7 @@ class PlaintextMessage(Message):
         self.text = text
         self.shift = shift
         self.valid_words = load_words("words.txt")
-       Message.__init__(self,text)
+        Message.__init__(self,text)
         self.encrypting_dict = self.build_shift_dict(shift)
         self.message_text_encrypted = self.apply_shift(shift)
 
