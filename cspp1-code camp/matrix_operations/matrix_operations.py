@@ -18,7 +18,7 @@ def mult_matrix(matrix_1, matrix_2):
                 for k in range(k_length):
                     result[i][j] += matrix_1[i][k] * matrix_2[k][j]
         return result
-    else:
+    if len(matrix_1[0]) != len(matrix_2):
         print("Error: Matrix shapes invalid for mult")
 
 
@@ -58,8 +58,10 @@ def read_matrix():
         assert len(row) == matrix_columnsize
         matrix.append(row)
     return matrix
-
 def main():
+    '''
+    the program is to perform the matrix operations
+    '''
     # read matrix 1
     try:
         matrix_1 = read_matrix()
