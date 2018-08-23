@@ -1,3 +1,6 @@
+'''
+the program is to find the addition of matrices and multiplication of matrices
+'''
 def mult_matrix(matrix_1, matrix_2):
     '''
         check if the matrix1 columns = matrix2 rows
@@ -21,7 +24,6 @@ def mult_matrix(matrix_1, matrix_2):
     if len(matrix_1[0]) != len(matrix_2):
         print("Error: Matrix shapes invalid for mult")
 
-
 def add_matrix(matrix_1, matrix_2):
     '''
         check if the matrix shapes are similar
@@ -40,7 +42,7 @@ def add_matrix(matrix_1, matrix_2):
             for j in range(column):
                 addition[i][j] = matrix_1[i][j] + matrix_2[i][j]
         return addition
-    else:
+    if len(matrix_1) != len(matrix_2) and len(matrix_1[0]) != len(matrix_2[0]):
         print("Error: Matrix shapes invalid for addition")
 
 def read_matrix():
@@ -78,6 +80,5 @@ def main():
     # multiply matrix 1 and matrix 2
         multi_matrix = mult_matrix(matrix_1, matrix_2)
         print(multi_matrix)
-
 if __name__ == '__main__':
     main()
