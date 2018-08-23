@@ -69,7 +69,7 @@ def main():
         matrix_1 = read_matrix()
     # read matrix 2
         matrix_2 = read_matrix()
-    except:
+    except Exception as e:
         print("Error: Invalid input for the matrix")
     # print(matrix_1)
     # print(matrix_2)
