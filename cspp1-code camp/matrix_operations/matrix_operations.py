@@ -15,14 +15,15 @@ def mult_matrix(matrix_1, matrix_2):
     result = [0] * row
     for iterate in range(row):
         result[iterate] = [0] * column
-    assert len(matrix_1[0]) != len(matrix_2)
+    if len(matrix_1[0]) != len(matrix_2):
+        print("Error: Matrix shapes invalid for mult")
     if len(matrix_1[0]) == len(matrix_2):
         for i in range(row):
             for j in range(column):
                 for k in range(k_length):
                     result[i][j] += matrix_1[i][k] * matrix_2[k][j]
         return result
-        
+
 
 def add_matrix(matrix_1, matrix_2):
     '''
@@ -37,13 +38,14 @@ def add_matrix(matrix_1, matrix_2):
     addition = [0] * row
     for iterate in range(row):
         addition[iterate] = [0] * column
-    assert len(matrix_1) != len(matrix_2) and len(matrix_1[0]) != len(matrix_2[0])
+    if len(matrix_1) != len(matrix_2) and len(matrix_1[0]) != len(matrix_2[0]):
+        print("Error: Matrix shapes invalid for addition")
     if len(matrix_1) == len(matrix_2) and len(matrix_1[0]) == len(matrix_2[0]):
         for i in range(row):
             for j in range(column):
                 addition[i][j] = matrix_1[i][j] + matrix_2[i][j]
         return addition
-    
+
 
 def read_matrix():
     '''
@@ -75,17 +77,10 @@ def main():
     # print(matrix_2)
     # add matrix 1 and matrix 2
     else:
-        try:
-            sum_matrix = add_matrix(matrix_1, matrix_2)
-            print(sum_matrix)
-        except:
-            print("Error: Matrix shapes invalid for addition")
+        sum_matrix = add_matrix(matrix_1, matrix_2)
+        print(sum_matrix)
     # multiply matrix 1 and matrix 2
-        else:
-            try:
-                multi_matrix = mult_matrix(matrix_1, matrix_2)
-                print(multi_matrix)
-            except:
-                print("Error: Matrix shapes invalid for mult")
+        multi_matrix = mult_matrix(matrix_1, matrix_2)
+        print(multi_matrix)
 if __name__ == '__main__':
     main()
