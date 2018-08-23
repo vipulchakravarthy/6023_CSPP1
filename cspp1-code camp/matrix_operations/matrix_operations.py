@@ -17,6 +17,7 @@ def mult_matrix(matrix_1, matrix_2):
         result[iterate] = [0] * column
     if len(matrix_1[0]) != len(matrix_2):
         print("Error: Matrix shapes invalid for mult")
+        return
     if len(matrix_1[0]) == len(matrix_2):
         for i in range(row):
             for j in range(column):
@@ -40,6 +41,7 @@ def add_matrix(matrix_1, matrix_2):
         addition[iterate] = [0] * column
     if len(matrix_1) != len(matrix_2) and len(matrix_1[0]) != len(matrix_2[0]):
         print("Error: Matrix shapes invalid for addition")
+        return
     if len(matrix_1) == len(matrix_2) and len(matrix_1[0]) == len(matrix_2[0]):
         for i in range(row):
             for j in range(column):
