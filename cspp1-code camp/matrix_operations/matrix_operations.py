@@ -46,7 +46,6 @@ def add_matrix(matrix_1, matrix_2):
                 addition[i][j] = matrix_1[i][j] + matrix_2[i][j]
         return addition
 
-
 def read_matrix():
     '''
         read the matrix dimensions from input
@@ -71,7 +70,7 @@ def main():
         matrix_1 = read_matrix()
     # read matrix 2
         matrix_2 = read_matrix()
-    except:
+    except AssertionError:
         print("Error: Invalid input for the matrix")
     # print(matrix_1)
     # print(matrix_2)
