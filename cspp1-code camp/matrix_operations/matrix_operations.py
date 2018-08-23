@@ -6,11 +6,11 @@ def mult_matrix(matrix_1, matrix_2):
         and return None
         error message should be "Error: Matrix shapes invalid for mult"
     '''
-    n = len(matrix_1)
-    m = len(matrix_1[0])
-    result = [0] * n
-    for i in range(n):
-        result[i] = [0] * m
+    row = len(matrix_1)
+    column = len(matrix_1[0])
+    result = [0] * row
+    for iterate in range(row):
+        result[iterate] = [0] * column
     if len(matrix_1[0]) == len(matrix_2):
         for i in range(len(matrix_1)):
             for j in range(len(matrix_2[0])):
@@ -18,7 +18,7 @@ def mult_matrix(matrix_1, matrix_2):
                     result[i][j] += matrix_1[i][k] * matrix_2[k][j]
         return result
     else:
-        print("Error: Matrix shapes invalid for multiplication")
+        print("Error: Matrix shapes invalid for multi")
 
 
 def add_matrix(matrix_1, matrix_2):
@@ -29,12 +29,11 @@ def add_matrix(matrix_1, matrix_2):
         and return None
         error message should be "Error: Matrix shapes invalid for addition"
     '''
-    n = len(matrix_1)
-    m = len(matrix_1[0])
-    addition = [0] * n
-    for i in range(n):
-        addition[i] = [0] * m
-
+    row = len(matrix_1)
+    column = len(matrix_1[0])
+    addition = [0] * row
+    for iterate in range(row):
+        addition[iterate] = [0] * column
     if len(matrix_1) == len(matrix_2) and len(matrix_1[0]) == len(matrix_2[0]):
         for i in range(len(matrix_1)):
             for j in range(len(matrix_1[0])):
@@ -52,24 +51,32 @@ def read_matrix():
         print an error message and return None
         error message should be "Error: Invalid input for the matrix"
     '''
-    row_list = []
+    matrix = []
     matrix_rowsize, matrix_columnsize = map(int, input().split(','))
-    matrix = [list(map(int, input().split())) for row in range(matrix_rowsize)]
+    for _ in range(matrix_rowsize):
+        row = list(map(int, input().split()))
+        assert(len(row) == matrix_columnsize)
+        matrix.append(row)
+       
     return matrix
 
 def main():
     # read matrix 1
-    matrix_1 = read_matrix()
+    try:
+        matrix_1 = read_matrix()
     # read matrix 2
-    matrix_2 = read_matrix()
+        matrix_2 = read_matrix()
+    except:
+        print("Error: Invalid input for the matrix")
     # print(matrix_1)
     # print(matrix_2)
     # add matrix 1 and matrix 2
-    sum_matrix = add_matrix(matrix_1, matrix_2)
-    print(sum_matrix)
+    else:
+        sum_matrix = add_matrix(matrix_1, matrix_2)
+        print(sum_matrix)
     # multiply matrix 1 and matrix 2
-    multi_matrix = mult_matrix(matrix_1, matrix_2)
-    print(multi_matrix)
+        multi_matrix = mult_matrix(matrix_1, matrix_2)
+        print(multi_matrix)
 
 if __name__ == '__main__':
     main()
