@@ -2,7 +2,6 @@ from collections import Counter
 def is_winner(tic_list):
 	count = 0
 	flag = 0
-	print(tic_list)
 	for i in range(3):
 		for j in range(3):
 			if tic_list[i][j] != 'x' and tic_list[i][j] != 'o' and tic_list[i][j] != '.':
