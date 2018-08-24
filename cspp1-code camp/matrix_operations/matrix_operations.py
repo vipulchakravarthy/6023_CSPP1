@@ -37,7 +37,6 @@ def add_matrix(matrix_1, matrix_2):
     addition = [0] * row
     for iterate in range(row):
         addition[iterate] = [0] * column
-    # if len(matrix_1) != len(matrix_2) and len(matrix_1[0]) != len(matrix_2[0]):
     if len(matrix_1) == len(matrix_2) and len(matrix_1[0]) == len(matrix_2[0]):
         for i in range(row):
             for j in range(column):
