@@ -12,13 +12,13 @@ def is_winner(tic_list):
     for row in range(3):
         for column in range(3):
             if (tic_list[row][column] != 'x' and tic_list[row][column] != 'o'
-                and tic_list[row][column] != '.'):
+                    and tic_list[row][column] != '.'):
                 flag = 1
     if flag == 1:
         return "invalid input"
     if count_dict['x'] > 5 or count_dict['o'] > 5:
         return "invalid game"
-    if(tic_list[0][0] == tic_list[0][1] == tic_list[0][2] == 'x' or
+    if (tic_list[0][0] == tic_list[0][1] == tic_list[0][2] == 'x' or
             tic_list[1][0] == tic_list[1][1] == tic_list[1][2] == 'x' or
             tic_list[2][0] == tic_list[2][1] == tic_list[2][2] == 'x' or
             tic_list[0][0] == tic_list[1][1] == tic_list[2][2] == 'x' or
@@ -28,7 +28,7 @@ def is_winner(tic_list):
             tic_list[0][1] == tic_list[1][1] == tic_list[2][1] == 'x'):
         count += 1
         winner = 'x'
-    if(tic_list[0][0] == tic_list[0][1] == tic_list[0][2] == 'o' or
+    if (tic_list[0][0] == tic_list[0][1] == tic_list[0][2] == 'o' or
             tic_list[1][0] == tic_list[1][1] == tic_list[1][2] == 'o' or
             tic_list[2][0] == tic_list[2][1] == tic_list[2][2] == 'o' or
             tic_list[0][0] == tic_list[1][1] == tic_list[2][2] == 'o' or
@@ -55,4 +55,3 @@ def main():
     print(is_winner(tic_list))
 if __name__ == '__main__':
     main()
-
