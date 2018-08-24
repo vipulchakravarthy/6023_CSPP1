@@ -19,23 +19,23 @@ def is_winner(tic_list):
     if count_dict['x'] > 5 or count_dict['o'] > 5:
         return "invalid game"
     if(tic_list[0][0] == tic_list[0][1] == tic_list[0][2] == 'x' or
-        tic_list[1][0] == tic_list[1][1] == tic_list[1][2] == 'x' or
-        tic_list[2][0] == tic_list[2][1] == tic_list[2][2] == 'x' or
-        tic_list[0][0] == tic_list[1][1] == tic_list[2][2] == 'x' or
-        tic_list[0][0] == tic_list[1][0] == tic_list[2][0] == 'x' or
-        tic_list[0][2] == tic_list[1][1] == tic_list[2][0] == 'x' or
-        tic_list[0][2] == tic_list[1][2] == tic_list[2][2] == 'x' or
-        tic_list[0][1] == tic_list[1][1] == tic_list[2][1] == 'x'):
+            tic_list[1][0] == tic_list[1][1] == tic_list[1][2] == 'x' or
+            tic_list[2][0] == tic_list[2][1] == tic_list[2][2] == 'x' or
+            tic_list[0][0] == tic_list[1][1] == tic_list[2][2] == 'x' or
+            tic_list[0][0] == tic_list[1][0] == tic_list[2][0] == 'x' or
+            tic_list[0][2] == tic_list[1][1] == tic_list[2][0] == 'x' or
+            tic_list[0][2] == tic_list[1][2] == tic_list[2][2] == 'x' or
+            tic_list[0][1] == tic_list[1][1] == tic_list[2][1] == 'x'):
         count += 1
         winner = 'x'
     if(tic_list[0][0] == tic_list[0][1] == tic_list[0][2] == 'o' or
-        tic_list[1][0] == tic_list[1][1] == tic_list[1][2] == 'o' or
-        tic_list[2][0] == tic_list[2][1] == tic_list[2][2] == 'o' or
-        tic_list[0][0] == tic_list[1][1] == tic_list[2][2] == 'o' or
-        tic_list[0][0] == tic_list[1][0] == tic_list[2][0] == 'o' or
-        tic_list[0][2] == tic_list[1][1] == tic_list[2][0] == 'o' or
-        tic_list[0][2] == tic_list[1][2] == tic_list[2][2] == 'o' or
-        tic_list[0][1] == tic_list[1][1] == tic_list[2][1] == 'o'):
+            tic_list[1][0] == tic_list[1][1] == tic_list[1][2] == 'o' or
+            tic_list[2][0] == tic_list[2][1] == tic_list[2][2] == 'o' or
+            tic_list[0][0] == tic_list[1][1] == tic_list[2][2] == 'o' or
+            tic_list[0][0] == tic_list[1][0] == tic_list[2][0] == 'o' or
+            tic_list[0][2] == tic_list[1][1] == tic_list[2][0] == 'o' or
+            tic_list[0][2] == tic_list[1][2] == tic_list[2][2] == 'o' or
+            tic_list[0][1] == tic_list[1][1] == tic_list[2][1] == 'o'):
         count += 1
         winner = 'o'
     if count == 2:
