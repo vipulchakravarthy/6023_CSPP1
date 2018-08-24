@@ -1,5 +1,5 @@
 '''
-the program is to play tic tac toe game 
+the program is to play tic tac toe game
 and decide the winner
 '''
 from collections import Counter
