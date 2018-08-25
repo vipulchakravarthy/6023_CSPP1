@@ -47,7 +47,6 @@ def is_winner(tic_list):
     if count == 0:
         winner = "draw"
     return winner
-
 def main():
     '''
     the program is to decide the winner of tic tac toe game
