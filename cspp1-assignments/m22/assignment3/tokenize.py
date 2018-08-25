@@ -15,9 +15,22 @@ def tokenize(word_list):
 def main():
     ''' to take the input and give the frequency of words in that string
     '''
+    character = ":;?,.''!@#$"
     lines = int(input())
+    word_list = []
     for _ in range(lines):
-        word_list = input().split()
-    print(tokenize(word_list))
+        row = input().split()
+        word_list += row
+    temp_list = word_list[:]
+    for word in word_list:
+        print(word)
+        for char in character:
+            print(char)
+            if char in word:
+                word = word.replace(char, '')
+                print(word)
+                word_list = word_list.append(word)
+    print(word_list)
+    print(tokenize(temp_list))
 if __name__ == '__main__':
     main()
