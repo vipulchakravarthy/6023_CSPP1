@@ -5,7 +5,7 @@ def main():
     ''' program is to print given text as a  string
     '''
     lines = int(input())
-    for line in range(lines):
+    for _ in range(lines):
         text = input()
         print(text)
 if __name__ == '__main__':
