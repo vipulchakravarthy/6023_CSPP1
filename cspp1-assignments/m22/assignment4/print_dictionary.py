@@ -8,7 +8,6 @@ def print_dictionary(dictionary):
     '''
     for key in sorted(dictionary):
         print(key, "-", dictionary[key])
-
 def main():
     ''' the program is to print the dictionary in a sorted order
     along with the keys and values
