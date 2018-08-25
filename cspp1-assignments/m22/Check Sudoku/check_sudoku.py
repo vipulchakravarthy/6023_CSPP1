@@ -8,6 +8,8 @@
     satisfies all the sudoku rules given in the statement above.
 '''
 def check_column(column_list):
+    ''' to check the column
+    '''
     temp = []
     flag = 1
     for element in column_list:
@@ -15,9 +17,11 @@ def check_column(column_list):
             temp.append(element)
         else:
             flag = 0
-    return flag 
+    return flag
 
 def check_row(row_list):
+    ''' to check complete row
+    '''
     temp = []
     flag = 1
     for element in row_list:
