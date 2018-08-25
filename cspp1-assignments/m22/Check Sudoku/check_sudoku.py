@@ -16,7 +16,6 @@ def check_column(column_list):
             temp.append(element)
         else:
             flag = 0
-    print(flag)
     return flag 
 
 def check_row(row_list):
@@ -34,7 +33,6 @@ def check_sudoku(sudoku):
         Your solution goes here. You may add other helper functions as needed.
         The function has to return True for a valid sudoku grid and false otherwise
     '''
-    var = []
     for lis in sudoku:
         for element in lis:
             if int(element) > 9 or int(element) < 0:
@@ -48,8 +46,8 @@ def check_sudoku(sudoku):
     column_check = []
     for i in range(len(sudoku[0])):
         for lis in sudoku:
-            var = column_check.append(lis[i])
-        flag = check_column(var)
+            column_check.append(lis[i])
+        flag = check_column(column_check)
         if flag == 1:
             pass
         else:
