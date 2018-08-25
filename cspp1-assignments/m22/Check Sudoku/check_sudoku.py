@@ -8,9 +8,8 @@
     satisfies all the sudoku rules given in the statement above.
 '''
 def check_column(column_list):
-    temp =[]
+    temp = []
     flag = 1
-    print(column_list)
     for element in column_list:
         if element not in temp:
             temp.append(element)
@@ -19,7 +18,7 @@ def check_column(column_list):
     return flag 
 
 def check_row(row_list):
-    temp =[]
+    temp = []
     flag = 1
     for element in row_list:
         if element not in temp:
@@ -58,12 +57,9 @@ def main():
         main function to read input sudoku from console
         call check_sudoku function and print the result to console
     '''
-    
-    # initialize empty list
     sudoku = []
-
     # loop to read 9 lines of input from console
-    for i in range(9):
+    for _ in range(9):
         # read a line, split it on SPACE and append row to list
         row = input().split(' ')
         sudoku.append(row)
