@@ -13,7 +13,7 @@ def tokenize(word_list):
             dictionary[iterate] += 1
         else:
             dictionary[iterate] = 1
-    return dictionary       
+    return dictionary
 def main():
     ''' to take the input and give the frequency of words in that string
     '''
